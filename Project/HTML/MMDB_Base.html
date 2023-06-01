@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMDb: My Movie DataBase </title>
+        <link rel="stylesheet" href="CSS/base.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <div class="HeaderBar">
+        <div class="AboveHeaderBar"></div>
+        <a href="http://localhost:3000"><img class="MMDBimage" src="Images/MMDB1.png"></a>
+        <div class="search">
+            <input class="searchBar" type="text" id="search">
+            <img class="searchButton"src="Images/search.png">
+        </div>
+        
+        <div class="HeaderBarLine"></div>
+        <div class="Menu" onclick="MenuOn()">
+            <p style="color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;"> MENU</p>
+            <p style="color:red; font-size: 41px; position: absolute; top:-44px; left:46px;"> MENU</p>
+            <p style="color:black; font-size: 40px; position: absolute; top:-44px; left:47px"> MENU</p>
+            <span class="MenuBars" style="background-color: cyan;"></span>
+            <span class="MenuBars" style="background-color:red; top:12px;"></span>
+            <span class="MenuBars" style="background-color: cyan; top: 23px;"></span>
+       </div>
+       <div class="signIn" onclick="parent.location='MMDB_logIn.html'">
+            <p class="signInText" style="color: white; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: red; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: black; position: absolute; left:13px">SIGN IN</p>
+
+        </div>
+        <div class="myAccount" onclick="AccountOn()">
+            <p class="myAccountText" style="color: cyan; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: red; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: black; position: absolute; left:6px">MY ACCOUNT</p>
+            <div class="AccountArrow"></div>
+            <div class="AccountBar" onmouseleave="AccountOff(this)">
+                <div class="AccountProfileButton" onclick="parent.location='MMDB_Account.html'"><p style="position: absolute; top: 10px; left: 45px; margin:0">Profile</p></div>
+                <div class="AccountSettingsButton" onclick="parent.location='MMDB_AccountSettings.html'"><p style="position: absolute; top:10px; left:8px;margin:0">Account Settings</p></div>
+                <div class="SignOutButton" onclick="SignOut()"><p style="position: absolute; top:10px; left:40px; margin:0">Sign Out</p></div>            </div>
+        </div>
+       
+        <div class="BelowHeaderBar"></div>
+
+    </div>
+    <div id="MenuPage" onmouseleave="MenuOff(this)">
+        <ul>
+            <h2>Movies</h2>
+            <li>Trending Movies</li>
+            <li>Browse Movies by Genre</li>
+            <li>Top Rated Movies</li>
+            <li>Most Popular</li>
+        </ul>
+
+        <ul>
+            <h2>Celebs</h2>
+            <li>Most Popular Celebs</li>
+            <li>A-Z List</li>
+
+
+        </ul>
+    </div>
+
+    
+    
+    <script src="JAVASCRIPT/Client.js">
+        
+        
+    </script>
+</body>
+</html>

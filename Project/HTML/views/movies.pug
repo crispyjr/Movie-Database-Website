@@ -1,0 +1,163 @@
+doctype html
+head
+  title MMDb: My Movie DataBase 
+  link(rel='stylesheet' href='../CSS/movie.css')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+body(onload="init()") 
+.HeaderBar
+  .AboveHeaderBar
+  a(href='http://localhost:3000')
+    img.MMDBimage(src='/html/Images/MMDB1.png')
+  .search
+    input#search.searchBar(type='text')
+    img.searchButton(src='/html/Images/search.png')
+  .HeaderBarLine
+  .Menu(onclick='MenuOn()')
+    p(style='color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;')  MENU
+    p(style='color:red; font-size: 41px; position: absolute; top:-44px; left:46px;')  MENU
+    p(style='color:black; font-size: 40px; position: absolute; top:-44px; left:47px')  MENU
+    span.MenuBars(style='background-color: cyan;')
+    span.MenuBars(style='background-color:red; top:12px;')
+    span.MenuBars(style='background-color: cyan; top: 23px;')
+  .signIn(onclick="window.location.replace='http://localhost:3000/login'")
+    p.signInText(style='color: white; position: absolute; left:13px') SIGN IN
+    p.signInText(style='color: red; position: absolute; left:13px') SIGN IN
+    p.signInText(style='color: black; position: absolute; left:13px') SIGN IN
+  .myAccount(onclick='AccountOn()')
+    p.myAccountText(style='color: cyan; position: absolute; left:8px') MY ACCOUNT
+    p.myAccountText(style='color: red; position: absolute; left:8px') MY ACCOUNT
+    p.myAccountText(style='color: black; position: absolute; left:6px') MY ACCOUNT
+    .AccountArrow
+    .AccountBar(onmouseleave='AccountOff(this)')
+      .AccountProfileButton(onclick='GoToProfile()')
+        p(style='position: absolute; top: 10px; left: 45px; margin:0') Profile
+      .AccountSettingsButton(onclick="parent.location='http://localhost:3000/AccountSettings'")
+        p(style='position: absolute; top:10px; left:8px;margin:0') Account Settings
+      .SignOutButton(onclick='SignOut()')
+        p(style='position: absolute; top:10px; left:40px; margin:0') Sign Out
+  .BelowHeaderBar
+#MenuPage(onmouseleave='MenuOff(this)')
+  ul
+    h2 Movies
+    li Trending Movies
+    li Browse Movies by Genre
+    li Top Rated Movies
+    li Most Popular
+  ul
+    h2 Celebs
+    li Most Popular Celebs
+    li A-Z List
+// MOVIE PANEL
+.MoviePanel
+  .MovieTitleBar
+    #MovieTitle #{film.Title}
+    img#RatingStar(src='/html/Images/StarRating.png')
+    #MovieRating
+      | #{film.imdbRating}/10
+  #MovieImageOutline
+    span#MovieContentRating #{film.Rated}
+    span#MovieHeartButton(onclick='addToWatchlist()') &#x2661;
+    img#MovieImage(src=film.Poster)
+  #MovieLine
+  #MovieDescription #{film.Plot}
+  #MovieGenre Genre: #{film.Genre} 
+.CastButton(onclick='ShowCast()')
+  p(style='margin-top: 200px;') C A S T A N D C R E W
+.ReviewButton(onclick='ShowRev()')
+  p(style='margin-top: 100px;')
+    | R E V I 
+    br
+    | E W S
+.DetailsButton(onclick='ShowDet()')
+  p(style='margin-top: 30px;')
+    | D E T A 
+    br
+    |  I 
+    br
+    | L S
+.MovieCastReviewPanel
+  // CAST AND CREW
+  .CastAndCrewPanel
+    .CastBar
+      p#CastBarText  C A S T  .  A N D  .  C R E W
+    p.Director D I R E C T O R
+    p#Director #{film.Director}
+    span#Divider
+    span#CastTitle  C A S T 
+    #CastBlock
+      ul#CastList
+        each act in cast 
+            li
+              a(href='bingbong')=act
+    span#WriterTitle  W R I T E R S
+    #WriterBlock
+      ul#WriterList
+        each w in write 
+            li
+              a(href='bingbong')= w[0]
+              br
+              span (#{w[1]}
+              
+  // REVIEWS
+  .ReviewsPanel
+    .WriteReviewBlock
+      p#ReviewTitle Write your Review
+      p#OutofTen /10
+      textarea#RatingInput(type='text' maxlength='3')
+      textarea#WriteHeadlineInput(placeholder='Write a juicy headline' type='text' maxlength='60')
+      input#SubmitReview(type='button' value='Submit Review' onclick='submitReview()')
+      textarea#WriteParagraphInput(placeholder='Write something short and simple!' type='text' maxlength='420')
+    #WrittenReviews
+      each rev in review
+        #ReviewBar
+            span#ReviewLine 
+            p#ReviewRating #{rev.rating}/10
+            p#ReviewHeadline #{rev.headline}
+            p#ReviewParagraph #{rev.paragraph}
+            a#ReviewUser(href='babablacksheep') #{rev.Uname}
+    
+  // DETAILS PANEL
+  .DetailsPanel
+    #DetailsBar
+      p#DetailsTitle D . E . T . A . I . L . S
+    #YearReleaseDvDBar
+      span#YearTitle Year
+      span#Year #{film.Year}
+      span#ReleaseTitle Release Date
+      span#Release #{film.Released}
+      span#DVDTitle DVD
+      span#DVD #{film.DVD}
+    #CountryLanguageBar
+      span#CountryTitle Country
+      span#Country #{film.Country}
+      span#LanguageTitle Language
+      span#Language #{film.Language}
+    #RuntimeProductBoxBar
+      span#Runtime Runtime
+      span#RuntimeTitle #{film.Runtime}
+      span#BoxTitle Box Office
+      span#Boxoffice #{film.BoxOffice}
+      span#ProductionTitle Production
+      span#Production #{film.Production}
+    #RatingsFromSites
+      #RatingBox(style='margin-left: 150px;')
+        span
+          | Internet Movie
+          br
+          span#Border Database
+        p#InternetRating #{film.imdbRating}
+      #RatingBox
+        span
+          | Rotten 
+          span#Border Tomatoes
+        p#RottenRating #{film.Ratings[1].Value}
+      #RatingBox
+        br
+        span#Border Metacritic
+        p#CriticRating #{film.Metascore} /100
+    #AwardsBar
+      br
+      p#Awards #{film.Awards}
+script(src='/html/JAVASCRIPT/Client.js')
+script(src='/html/JAVASCRIPT/movies.js')
+script(src='/html/JAVASCRIPT/reviews.js')

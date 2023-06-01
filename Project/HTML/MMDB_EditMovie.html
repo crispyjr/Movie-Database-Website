@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMDb: My Movie DataBase </title>
+        <link rel="stylesheet" href="CSS/edit.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <div class="HeaderBar">
+        <div class="AboveHeaderBar"></div>
+        <a href="http://localhost:3000"><img class="MMDBimage" src="Images/MMDB1.png"></a>
+        <div class="search">
+            <input class="searchBar" type="text" id="search">
+            <img class="searchButton"src="Images/search.png">
+        </div>
+        
+        <div class="HeaderBarLine"></div>
+        <div class="Menu" onclick="MenuOn()">
+            <p style="color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;"> MENU</p>
+            <p style="color:red; font-size: 41px; position: absolute; top:-44px; left:46px;"> MENU</p>
+            <p style="color:black; font-size: 40px; position: absolute; top:-44px; left:47px"> MENU</p>
+            <span class="MenuBars" style="background-color: cyan;"></span>
+            <span class="MenuBars" style="background-color:red; top:12px;"></span>
+            <span class="MenuBars" style="background-color: cyan; top: 23px;"></span>
+       </div>
+       <div class="signIn" onclick="parent.location='MMDB_logIn.html'">
+            <p class="signInText" style="color: white; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: red; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: black; position: absolute; left:13px">SIGN IN</p>
+
+        </div>
+        <div class="myAccount" onclick="AccountOn()">
+            <p class="myAccountText" style="color: cyan; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: red; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: black; position: absolute; left:6px">MY ACCOUNT</p>
+            <div class="AccountArrow"></div>
+            <div class="AccountBar" onmouseleave="AccountOff(this)">
+                <div class="AccountProfileButton" onclick="parent.location='MMDB_Account.html'"><p style="position: absolute; top: 10px; left: 45px; margin:0">Profile</p></div>
+                <div class="AccountSettingsButton" onclick="parent.location='MMDB_AccountSettings.html'"><p style="position: absolute; top:10px; left:8px;margin:0">Account Settings</p></div>
+                <div class="SignOutButton" onclick="SignOut()"><p style="position: absolute; top:10px; left:40px; margin:0">Sign Out</p></div>            </div>
+        </div>
+       
+        <div class="BelowHeaderBar"></div>
+
+    </div>
+    <div id="MenuPage" onmouseleave="MenuOff(this)">
+        <ul>
+            <h2>Movies</h2>
+            <li>Trending Movies</li>
+            <li>Browse Movies by Genre</li>
+            <li>Top Rated Movies</li>
+            <li>Most Popular</li>
+        </ul>
+
+        <ul>
+            <h2>Celebs</h2>
+            <li>Most Popular Celebs</li>
+            <li>A-Z List</li>
+
+
+        </ul>
+    </div>
+
+    <div id="ButtonsBlock">
+        <div id="TitleDescriptionButton" onclick="showTitle()">Title & Description</div>
+        <div id="CastAndCrewButton" onclick="showCast()"> Cast & Crew</div>
+        <div id="DetailsButton" onclick="showDetails()">Details</div>
+        <div id="SaveButton">Save</div>
+    </div>
+    <div id="EditBlock">
+        <div id="TitleAndDescrip">
+            <div id="Title">
+                <label id="TitleLabel">Title: </label> <input id="TitleInput"type="text">
+
+            </div>
+            <div id="Description">
+                <label id="DescripLabel">Description</label><textarea id="DescripInput" maxlength="200" ></textarea>
+            </div>
+            <div id="Genre">
+                Genres <br>*(Seperate each with a coma)
+                <input id="GenreInput"type="text">
+            </div>
+          <div id="Poster">
+            switching poster image here
+          </div>
+            
+        </div>
+        <div id="CastAndCrew">
+            <div id="Director">
+                Director
+                <input id="DirectorInput" type="text">
+            </div>
+            <div id="Writers">
+                <p style="margin:0">Writers: seperate with coma ","</p>
+                <textarea id="WritersInput"></textarea>
+                
+                <p style="margin:0">Screenplay:</p>
+                <textarea id="ScreenPlayInput"></textarea>
+            </div>
+            <div id="Actors" style="width: 100%;">
+                    <p style="margin: 0">Actors: seperate with coma ","</p>
+                    <textarea id="ActorsInput">bing</textarea>
+            </div>
+
+        </div>
+        <div id="Details">
+            <span style="font-size: 30px; margin: 0; margin-left: 10px; border-bottom: 2px cyan solid;">Details</span>
+            <span style="margin-left: 20px;">Use N/A if needed</span>
+            <div id="Details1">
+                <label style="margin-left: 20px">Year</label> <input id="YearInput" type="text" maxlength="4" placeholder="ex: 2000">
+                <label>Rating</label> <input id="RatingInput" type="text" maxlength="2" placeholder="ex: G">
+                <label>Language</label> <input id="LanguageInput" type="text" maxlength="15" placeholder="ex: english">
+                <label>Runtime</label> <input id="RuntimeInput" type="text" maxlength="3" placeholder="in minutes">
+            </div>
+            <div id="Details1">
+                <label style="margin-left: 20px;"> Release Date</label> <input id="ReleaseInput" type="text" maxlength="10" placeholder="DD/MM/YYYY">
+                <label>Country</label><input id="CountryInput" type="text" maxlength="20" placeholder="ex: Canada">
+                <label>Box Office</label><input id="BoxOfficeInput" type="text" maxlength="12" placeholder="ex: $10,000">
+            </div>
+            <div id="Details1">
+                <label style="margin-left: 20px;">Awards</label><input id="AwardInput" type="text" placeholder="# of awards won" maxlength="3">
+                <label>Nominations</label><input id="NominationInput" type="text" maxlength="3" placeholder="# of nominations">
+            </div>
+            <div id="Details1">
+                <p style="margin-left: 10px;">Ratings from Other Sites</p>
+                <label style="margin-left: 20px;">Rotten Tomatos</label><input id="RottenInput" maxlength="4">
+                <label> IMDb</label><input id="IMDbInput" maxlength="4">
+              
+                <label style="margin-left: 20px;">MetaScore</label><input id="MetaScoreInput" maxlength="3">
+                  <div></div>
+                <label style="margin-left: 20px;">Internet Movie DataBase</label><input id="IntMovieInput" maxlength="4">
+            </div>
+           <div id="Details1">
+                <label style="margin-left: 20px;">Production</label><input id="ProductionInput">
+                <label>DVD Release</label><input id="DvDInput" type="text" placeholder="DD/MM/YYYY" maxlength="10">
+                
+            </div>
+            <label style="margin-left: 20px;">Website</label> <input id="WebsiteInput" type="text"></div>
+
+    </div>
+    
+    
+    <script src="JAVASCRIPT/Client.js">
+        
+        
+    </script>
+</body>
+</html>

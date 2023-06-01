@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMDb: My Movie DataBase </title>
+        <link rel="stylesheet" href="HTML/CSS/Home.css">
+        <!--<link rel="icon" href="MMDB2.png">-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body onload="init()">
+    <div class="HeaderBar">
+        <div class="AboveHeaderBar"></div>
+        <a href="http://localhost:3000"><img class="MMDBimage" src="HTML/Images/MMDB1.png"></a>
+        <div class="search">
+            <input class="searchBar" type="text" id="search">
+            <img class="searchButton" src="HTML/Images/search.png">
+        </div>
+        
+        <div class="HeaderBarLine"></div>
+        <div class="Menu" onclick="MenuOn()">
+            <p style="color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;"> MENU</p>
+            <p style="color:red; font-size: 41px; position: absolute; top:-44px; left:46px;"> MENU</p>
+            <p style="color:black; font-size: 40px; position: absolute; top:-44px; left:47px"> MENU</p>
+            <span class="MenuBars" style="background-color: cyan;"></span>
+            <span class="MenuBars" style="background-color:red; top:12px;"></span>
+            <span class="MenuBars" style="background-color: cyan; top: 23px;"></span>
+       </div>
+       <div class="signIn" onclick="parent.location='http://localhost:3000/login'">
+            <p class="signInText" style="color: white; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: red; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: black; position: absolute; left:13px">SIGN IN</p>
+
+        </div>
+        <div class="myAccount" onclick="AccountOn()">
+            <p class="myAccountText" style="color: cyan; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: red; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: black; position: absolute; left:6px">MY ACCOUNT</p>
+            <div class="AccountArrow"></div>
+            <div class="AccountBar" onmouseleave="AccountOff(this)">
+                <div class="AccountProfileButton" onclick="GoToProfile()"><p style="position: absolute; top: 10px; left: 45px; margin:0">Profile</p></div>
+                <div class="AccountSettingsButton" onclick="parent.location='http://localhost:3000/AccountSettings'"><p style="position: absolute; top:10px; left:8px;margin:0">Account Settings</p></div>
+                <div class="SignOutButton" onclick="SignOut()"><p style="position: absolute; top:10px; left:40px; margin:0">Sign Out</p></div>            
+            </div>
+        </div>
+       
+        <div class="BelowHeaderBar"></div>
+
+    </div>
+    <div id="MenuPage" onmouseleave="MenuOff(this)">
+        <ul>
+            <h2>Movies</h2>
+            <li>Trending Movies</li>
+            <li>Browse Movies by Genre</li>
+            <li>Top Rated Movies</li>
+            <li>Most Popular</li>
+        </ul>
+
+        <ul>
+            <h2>Celebs</h2>
+            <li>Most Popular Celebs</li>
+            <li>A-Z List</li>
+
+
+        </ul>
+    </div>
+    <div class="middle">
+    <div class="SlideShow">
+
+        <a class="prevButton" onclick="addSlides(-1)"> < </a>
+        <a class="nextButton" onclick="addSlides(1)"> > </a>
+
+        <div class="Slides fade">
+            <a class="movieText" href="http://localhost:3000/movies/Toy%20Story">Toy Story</a>
+            <img class="SlideShowImage" src="https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg">
+        </div>
+        <div class="Slides fade">
+            <a class="movieText" href='http://localhost:3000/users'> See List of Users Here!</a>
+            <img class="SlideShowImage" src="HTML/Images/mads-mikkelsen.jpg">
+
+        </div>
+        <div class="Slides fade">
+            <a class="movieText" href='http://localhost:3000/movies'>See Lists of Movies Here!</a>
+            <img class="SlideShowImage" src="https://m.media-amazon.com/images/M/MV5BMjQxM2YyNjMtZjUxYy00OGYyLTg0MmQtNGE2YzNjYmUyZTY1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
+        </div>
+        <div class="Slides fade">
+            <a class="movieText" href="http://localhost:3000/movies/Jumanji">Jumanji</a>
+            <img class="SlideShowImage" src="https://m.media-amazon.com/images/M/MV5BZTk2ZmUwYmEtNTcwZS00YmMyLWFkYjMtNTRmZDA3YWExMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
+        </div>
+       
+         <div class="SlideShowBar">
+             <h2 style="position: absolute; margin:10px; color:white;">Welcome to My Movie DataBase!</h2>
+             <p style="position: absolute; color: white; top:25px; left:20px">Get the latest info from:</p>
+             
+         </div>
+          <div style="text-align: center;">
+            <span class="dots" style="left:590px;" onclick="currentSlide(1)">1 </span>
+            <span class="dots" style="left:630px;" onclick="currentSlide(2)"> 2</span>
+            <span class="dots" style="left:670px;" onclick="currentSlide(3)">3 </span>
+            <span class="dots" style="left:710px;" onclick="currentSlide(4)">4 </span>
+        </div>
+
+    </div>
+    <div class="Recommend">
+        <h1 style="text-align: center;">Welcome to My MovieDatabse</h1>
+        <h3 style="padding-left: 10px;";>A Place where you can:</h3>
+       <ul style="padding-left: 20px;">
+           <li> Search for your favorite movies</li>
+           <li>Write short and simple reviews</li>
+           <li>Contribute to editing pages</li>
+       </ul>
+      <div id="RecommendBar">
+            <span id="RecommendTab">Recommended</span>
+            <span id="TopRatedTab">Top Rated</span>
+        </div>
+
+        <div class="RecommendShow">
+           <!--
+            <a class="prevButton" style="top:0"> < </a>
+            <a class="nextButton" style="top:0"> > </a>
+           --> 
+            <div id="Movie">
+                <img id="MovieImage" src="https://m.media-amazon.com/images/M/MV5BN2ZkZTMxOTAtMzg1Mi00M2U0LWE2NWItZDg4YmQyZjVkMDdhXkEyXkFqcGdeQXVyNTM5NzI0NDY@._V1_SX300.jpg">
+                <a id="MovieTitle">Tom and Huck  </a>
+                
+            </div>
+            <div id="Movie">
+                <img id="MovieImage" src="https://m.media-amazon.com/images/M/MV5BMzk2OTg4MTk1NF5BMl5BanBnXkFtZTcwNjExNTgzNA@@._V1_SX300.jpg">
+                <p id="MovieTitle"> GoldenEye</p>
+            </div>
+            <div id="Movie">
+                <img id="MovieImage" src="https://m.media-amazon.com/images/M/MV5BN2NjYWE5NjMtODlmZC00MjJhLWFkZTktYTJlZTI4YjVkMGNmXkEyXkFqcGdeQXVyNDc2NjEyMw@@._V1_SX300.jpg">
+                <p id="MovieTitle"> Sudden Death  </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+   
+    
+    
+    
+    <script src="HTML/JAVASCRIPT/Client.js"></script>
+    <script src="HTML/JAVASCRIPT/slideshow.js"></script>
+</body>
+</html>

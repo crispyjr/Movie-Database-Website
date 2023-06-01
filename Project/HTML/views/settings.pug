@@ -1,0 +1,88 @@
+doctype html
+head
+  title MMDb: My Movie DataBase 
+  link(rel='stylesheet' href='../CSS/AccountSettings.css')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+body(onload="init()") 
+.HeaderBar
+  .AboveHeaderBar
+  a(href='http://localhost:3000')
+    img.MMDBimage(src='html/Images/MMDB1.png')
+  .search
+    input#search.searchBar(type='text')
+    img.searchButton(src='html/Images/search.png')
+  .HeaderBarLine
+  .Menu(onclick='MenuOn()')
+    p(style='color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;')  MENU
+    p(style='color:red; font-size: 41px; position: absolute; top:-44px; left:46px;')  MENU
+    p(style='color:black; font-size: 40px; position: absolute; top:-44px; left:47px')  MENU
+    span.MenuBars(style='background-color: cyan;')
+    span.MenuBars(style='background-color:red; top:12px;')
+    span.MenuBars(style='background-color: cyan; top: 23px;')
+  .signIn(onclick="window.location.replace='http://localhost:3000/login'")
+    p.signInText(style='color: white; position: absolute; left:13px') SIGN IN
+    p.signInText(style='color: red; position: absolute; left:13px') SIGN IN
+    p.signInText(style='color: black; position: absolute; left:13px') SIGN IN
+  .myAccount(onclick='AccountOn()')
+    p.myAccountText(style='color: cyan; position: absolute; left:8px') MY ACCOUNT
+    p.myAccountText(style='color: red; position: absolute; left:8px') MY ACCOUNT
+    p.myAccountText(style='color: black; position: absolute; left:6px') MY ACCOUNT
+    .AccountArrow
+    .AccountBar(onmouseleave='AccountOff(this)')
+        .AccountProfileButton(onclick='GoToProfile()')
+            p(style='position: absolute; top: 10px; left: 45px; margin:0') Profile
+        .AccountSettingsButton(onclick="parent.location='http://localhost:3000/AccountSettings'")
+            p(style='position: absolute; top:10px; left:8px;margin:0') Account Settings
+        .SignOutButton(onclick='SignOut()')
+            p(style='position: absolute; top:10px; left:40px; margin:0') Sign Out
+
+  .BelowHeaderBar
+#MenuPage(onmouseleave='MenuOff(this)')
+  ul
+    h2 Movies
+    li Trending Movies
+    li Browse Movies by Genre
+    li Top Rated Movies
+    li Most Popular
+  ul
+    h2 Celebs
+    li Most Popular Celebs
+    li A-Z List
+#Buttons
+  #EditProfileButton(onclick='showProfile()') E D I T  P R O F I L E
+  #ChangePasswordButton(onclick='showChangePass()') C H A N G E  P A S S W O R D
+  #ContributionButton(onclick='showContributions()') C O N T R I B U T O R
+#Block
+  #EditProfileBlock
+    #ImageBlock
+      img#Image(src='html/Images/StarRating.png')
+    input#ImageUrl(type='textbox' value='ifjdifhhfdf.jpg' disabled='')
+    p#UsernameTitle #{id}
+    p#UserType Regular User
+    p#UserTypeChange Change to Contributer?
+  #ChangePasswordBlock
+    h3#ChangePasswordTitle Change Password:
+    label#CurrentPasswordTitle Current Password:
+    input#CurrentPasswordBox(maxlength='25')
+    label#NewPasswordTitle(style='top: 90px; left: 54px;') New Password:
+    input#NewPasswordBox(maxlength='25')
+    label#NewPasswordTitle New Password again:
+    input#NewPasswordBox2(maxlength='25')
+    input#SubmitButton(type='button' value='Submit!' onclick='changePassword()')
+    ul#PasswordCheckSec
+      li#passCheck Password at least 8 characters
+      li#upperCheck At least 1 uppercase
+      li#lowerCheck At least 1 lowercase letter
+      li#numCheck At least 1 number
+      li#PasswordMatch Password Match
+    p#Success Password Successfully changed
+  #ContributionBlock
+    h1#TotalEditsTitle Total Edits
+    h3#TotalEdits 100
+    h1#ContributorLevelTitle Contributor Level
+    h3#ContributorLevel 40
+    h1#NewTitle Add New:
+    span#NewMovie Movie
+    span#NewPerson Person
+script(src='/html/JAVASCRIPT/Client.js')
+script(src='/html/JAVASCRIPT/Account.js')

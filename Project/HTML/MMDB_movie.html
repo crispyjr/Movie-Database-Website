@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMDb: My Movie DataBase </title>
+        <link rel="stylesheet" href="CSS/movie.css">
+        
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body onload="init()">
+    <div class="HeaderBar">
+        <div class="AboveHeaderBar"></div>
+        <a href="http://localhost:3000"><img class="MMDBimage" src="Images/MMDB1.png"></a>
+        <div class="search">
+            <input class="searchBar" type="text" id="search">
+            <img class="searchButton"src="Images/search.png">
+        </div>
+        
+        <div class="HeaderBarLine"></div>
+        <div class="Menu" onclick="MenuOn()">
+            <p style="color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;"> MENU</p>
+            <p style="color:red; font-size: 41px; position: absolute; top:-44px; left:46px;"> MENU</p>
+            <p style="color:black; font-size: 40px; position: absolute; top:-44px; left:47px"> MENU</p>
+            <span class="MenuBars" style="background-color: cyan;"></span>
+            <span class="MenuBars" style="background-color:red; top:12px;"></span>
+            <span class="MenuBars" style="background-color: cyan; top: 23px;"></span>
+       </div>
+       <div class="signIn" onclick="parent.location='MMDB_logIn.html'">
+            <p class="signInText" style="color: white; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: red; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: black; position: absolute; left:13px">SIGN IN</p>
+
+        </div>
+        <div class="myAccount" onclick="AccountOn()">
+            <p class="myAccountText" style="color: cyan; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: red; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: black; position: absolute; left:6px">MY ACCOUNT</p>
+            <div class="AccountArrow"></div>
+            <div class="AccountBar" onmouseleave="AccountOff(this)" >
+                <div class="AccountProfileButton" onclick="parent.location='MMDB_Account.html'"><p style="position: absolute; top: 10px; left: 45px; margin:0">Profile</p></div>
+                <div class="AccountSettingsButton" onclick="parent.location='MMDB_AccountSettings.html'"><p style="position: absolute; top:10px; left:8px;margin:0">Account Settings</p></div>
+                <div class="SignOutButton" onclick="SignOut()"><p style="position: absolute; top:10px; left:40px; margin:0">Sign Out</p></div>            
+            </div>
+        </div>
+       
+        <div class="BelowHeaderBar"></div>
+
+    </div>
+    <div id="MenuPage" onmouseleave="MenuOff(this)">
+        <ul>
+            <h2>Movies</h2>
+            <li>Trending Movies</li>
+            <li>Browse Movies by Genre</li>
+            <li>Top Rated Movies</li>
+            <li>Most Popular</li>
+        </ul>
+
+        <ul>
+            <h2>Celebs</h2>
+            <li>Most Popular Celebs</li>
+            <li>A-Z List</li>
+
+
+        </ul>
+    </div>
+
+    <!-- MOVIE PANEL -->
+    <div class="MoviePanel">
+        <div class="MovieTitleBar">
+            <div id="MovieTitle"></div>
+           <img id="RatingStar"src="Images/StarRating.png">
+            <div id="MovieRating">   
+                7.5/10
+            </div>
+        </div>
+        <div id="MovieImageOutline">
+            <span id="MovieContentRating">PG-13</span>
+            <img id="MovieImage">
+            <span id="MovieHeartButton" onclick="addToWatchlist()">♡</span>
+            
+        </div>
+        
+        <div id="MovieLine"></div>
+        <div id="MovieDescription"></div>
+        <div id="MovieGenre">Genre: </div>
+    </div>
+    <div class="CastButton" onclick="ShowCast()">
+        <p style="margin-top: 200px;">C A S T A N D C R E W</p>
+    </div>
+    <div class="ReviewButton" onclick="ShowRev()">
+        <p style="margin-top: 100px;">R E V I <br>E W S</p>
+    </div>
+    <div class="DetailsButton" onclick="ShowDet()">
+       <p style="margin-top: 30px;">D E T A <br> I <br>L S</p>
+    </div>
+    <div class="MovieCastReviewPanel">
+        <!--CAST AND CREW-->
+        <div class="CastAndCrewPanel">
+            <div class="CastBar"><p id="CastBarText"> C A S T  .  A N D  .  C R E W</p></div>
+            <p class="Director">D I R E C T O R</p>
+            <p id="Director">Director Name</p>
+            <span id="Divider"></span>
+            <span id="CastTitle"> C A S T </span>
+            <div id="CastBlock">
+                <ul id="CastList">
+                    <li><a href="bingbong">bing bong</a></li>
+                </ul>
+            </div>
+            <span id="WriterTitle"> W R I T E R S</span>
+            <div id="WriterBlock">
+                <ul id="WriterList">
+                   
+                </ul>
+            </div>
+        </div>
+        <!--REVIEWS-->
+        <div class="ReviewsPanel">
+            <div class="WriteReviewBlock">
+                <p id="ReviewTitle">Write your Review</p>
+                <p id="OutofTen">/10</p>
+                <textarea id="RatingInput" type="text" maxlength="3"></textarea>
+                
+                <textarea id="WriteHeadlineInput" placeholder="Write a juicy headline" type='text' maxlength="60"></textarea>
+                <input id="SubmitReview" type="button" value="Submit Review" onclick="submitReview()">
+                <textarea id="WriteParagraphInput" placeholder="Write something short and simple!" type="text" maxlength="420"></textarea>
+
+            </div>
+            <div id="WrittenReviews">
+                <div id="ReviewBar">
+                    <span id="ReviewLine"></span>
+                    <p id="ReviewRating">9.5/10</p>
+                    <p id="ReviewHeadline">The movie was awesomeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+                    <p id="ReviewParagraph">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhh
+                    </p>
+                    <a id="ReviewUser" href="MMDB_Account.html">UserName10000000000000</a>
+                </div>
+                <div id="ReviewBar">
+                    <span id="ReviewLine"></span>
+                    <p id="ReviewRating">9.5/10</p>
+                    <p id="ReviewHeadline">The movie was awesomeeeeeeeeeeeeee</p>
+                    <p id="ReviewParagraph">blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+                        blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                    </p>
+                    <a id="ReviewUser" href="MMDB_Account.html">UserName10000000000000</a>
+                </div>
+
+
+            </div>
+
+        </div> 
+        <!--DETAILS PANEL-->
+        <div class="DetailsPanel">
+            <div id="DetailsBar">
+                <p id="DetailsTitle">D . E . T . A . I . L . S</p>
+            </div>
+            <div id="YearReleaseDvDBar">
+                <span id="YearTitle">Year</span>
+                <span id="Year">199555</span>
+                <span id="ReleaseTitle">Release Date</span>
+                <span id="Release">18 Dec 2020</span>
+                <span id="DVDTitle">DVD</span>
+                <span id="DVD">13 dec 2001</span>
+            </div>
+            <div id="CountryLanguageBar">
+                <span id="CountryTitle">Country</span>
+                <span id="Country">England</span>
+                <span id="LanguageTitle">Language</span>
+                <span id="Language">English</span>
+            </div>
+            <div id="RuntimeProductBoxBar">
+                <span id="Runtime">Runtime</span>
+                <span id="RuntimeTitle">Runtime</span>
+                <span id="BoxTitle">Box Office</span>
+                <span id="Boxoffice">10000</span>
+                <span id="ProductionTitle">Production</span>
+                <span id="Production">moto moto inc</span>
+            </div>
+            <div id=RatingsFromSites>
+                <div style="margin-left: 150px;"id="RatingBox">
+                    <span>Internet Movie<br><span id="Border">Database</span></span>
+                    <p id="InternetRating">8.3</p>
+                </div>
+                <div id="RatingBox"><span>Rotten <span id="Border">Tomatoes</span></span><p id="RottenRating">8.3</p></div>
+                <div id="RatingBox"><br><span id="Border">Metacritic</span><p id="CriticRating">39/100</p></div>
+            </div>
+            <div id="AwardsBar">
+                <br>
+                <p id="Awards">2 wins & 4 Nominations</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="JAVASCRIPT/Client.js"></script>
+    <script src="JAVASCRIPT/movies.js"></script>
+    <script src="JAVASCRIPT/reviews.js"></script>
+</body>
+</html>

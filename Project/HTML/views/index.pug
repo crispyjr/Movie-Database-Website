@@ -1,0 +1,57 @@
+doctype html
+head
+  title MMDb: My Movie DataBase 
+  link(rel='stylesheet' href='../CSS/base.css')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+body(onload='init()')
+.HeaderBar
+  .AboveHeaderBar
+  a(href='http://localhost:3000')
+    img.MMDBimage(src='/html/Images/MMDB1.png')
+  .search
+    input#search.searchBar(type='text')
+    img.searchButton(src='/html/Images/search.png')
+  .HeaderBarLine
+  .Menu(onclick='MenuOn()')
+    p(style='color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;')  MENU
+    p(style='color:red; font-size: 41px; position: absolute; top:-44px; left:46px;')  MENU
+    p(style='color:black; font-size: 40px; position: absolute; top:-44px; left:47px')  MENU
+    span.MenuBars(style='background-color: cyan;')
+    span.MenuBars(style='background-color:red; top:12px;')
+    span.MenuBars(style='background-color: cyan; top: 23px;')
+  .signIn(onclick="window.location.replace='http://localhost:3000/login'")
+    p.signInText(style='color: white; position: absolute; left:13px') SIGN IN
+    p.signInText(style='color: red; position: absolute; left:13px') SIGN IN
+    p.signInText(style='color: black; position: absolute; left:13px') SIGN IN
+  .myAccount(onclick='AccountOn()')
+    p.myAccountText(style='color: cyan; position: absolute; left:8px') MY ACCOUNT
+    p.myAccountText(style='color: red; position: absolute; left:8px') MY ACCOUNT
+    p.myAccountText(style='color: black; position: absolute; left:6px') MY ACCOUNT
+    .AccountArrow
+    .AccountBar(onmouseleave='AccountOff(this)')
+      .AccountProfileButton(onclick='GoToProfile()')
+        p(style='position: absolute; top: 10px; left: 45px; margin:0') Profile
+      .AccountSettingsButton(onclick="parent.location='http://localhost:3000/AccountSettings'")
+        p(style='position: absolute; top:10px; left:8px;margin:0') Account Settings
+      .SignOutButton(onclick='SignOut()')
+        p(style='position: absolute; top:10px; left:40px; margin:0') Sign Out
+  .BelowHeaderBar
+#MenuPage(onmouseleave='MenuOff(this)')
+  ul
+    h2 Movies
+    li Trending Movies
+    li Browse Movies by Genre
+    li Top Rated Movies
+    li Most Popular
+  ul
+    h2 Celebs
+    li Most Popular Celebs
+    li A-Z List
+#Block
+  h1(style='margin:0') Movies
+    each movie in items
+        a(href="/movies/"+movie.Title)= movie.Title
+        br
+    
+  
+script(src='/html/JAVASCRIPT/Client.js')

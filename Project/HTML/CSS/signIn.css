@@ -1,0 +1,298 @@
+body {
+    background-color: black;
+    padding:0px;
+    margin:0px;
+}
+/*SEARCH BAR*/
+.HeaderBar{
+    background-color: black;
+    position: fixed;
+    z-index: 2;
+    width:100%;
+    height:50px;
+}
+.AboveHeaderBar{
+    background-color: cyan;
+    position: absolute;
+    width: 100%;
+    height:2px;
+}
+.BelowHeaderBar{
+    background-color: red;
+    position: absolute;
+    width:100%;
+    height:2px;
+    top:48px;
+}
+.MMDBimage{
+    position: absolute;
+    top:5px;
+    left:5px;
+    width:100px;
+    height:40px;
+}
+.search{
+    width:530px;
+    height:40px;
+    left:420px;
+    position: absolute;
+    
+}
+.searchBar{
+    position: absolute;
+    width: 500px;
+    height:25px;
+    margin: 9px;
+    border-color: red;
+}
+.searchButton{
+    position: absolute;
+    width:30px;
+    height:30px;
+    right:6px;
+    cursor: pointer;
+    margin:9px;
+}
+.searchButton:hover{
+    background-color: rgba(61, 61, 61, 0.102);
+}
+
+
+.signIn {
+    position: absolute;
+    background-color: black;
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    border-top-color: cyan;
+    border-bottom-color: red;
+    border-right-color: black;
+    border-left-color: black;
+    width:90px;
+    height:25px;
+    right:10px;
+    margin: 10px;
+    transition: 0.6s;
+    cursor: pointer;
+    
+    
+}
+.signInText, .myAccountText{
+    position: absolute;
+    font-weight: bold;
+    font-size: medium;
+    text-align: justify;
+    top:-12px;
+}
+.myAccount{
+    position: absolute;
+    background-color: black;
+    cursor: pointer;
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    border-top-color: red;
+    border-bottom-color: red;
+    border-right-color: black;
+    border-left-color: black;
+    width:140px;
+    height:25px;
+    right:10px;
+    margin: 10px;
+    display: none;
+}
+.AccountArrow{
+    position: absolute;
+    width:0;
+    height: 0;
+    border-top:5px solid cyan;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom:8px;
+    right:10px;
+
+}
+.signIn:hover, .myAccount:hover{
+    background-color: rgb(69, 69, 69);
+}
+.AccountBar{
+    position: absolute;
+    width:150px;
+    height:105px;
+    background-color: rgb(23, 22, 22) ;
+    display: none;
+    z-index: 2;
+    top:30px;
+    right:-3px;
+    border-radius: 10%;
+}
+.AccountProfileButton{
+    position: relative;
+    width:150px;
+    height:35px;
+    transition: 0.2s;
+    text-align: center;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+.AccountSettingsButton{
+    position: relative;
+    width:150px;
+    height:35px;
+    transition: 0.2s;
+
+}
+.SignOutButton{
+    position: relative;
+    width: 150px;
+    height: 35px;
+    transition: 0.2s;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+.AccountSettingsButton:hover,.SignOutButton:hover, .AccountProfileButton:hover{
+    background-color: rgba(72, 71, 71, 0.224);
+}
+.HeaderBarLine{
+    position: absolute;
+    width: 3px;
+    height:40px;
+    background-color: red;
+    opacity: 0.2;
+    margin:5px;
+    left:120px;
+}
+.MenuButton{
+    position: absolute;
+    width:150px;
+    height:40px;
+    margin:3px;
+    left:140px;
+    color: white;
+    background-color: black;
+    border:none;
+    cursor: pointer;
+    display: none;
+}
+/*SEARCH BAR*/
+
+/*MENU list will have a black bottom border to seperate*/
+.Menu{
+    position: absolute;
+    width:170px;
+    height:40px;
+    margin:5px;
+    left:140px;
+    transition: 0.7s;
+    cursor: pointer;
+}
+.Menu:hover{
+    background-color: rgb(39, 37, 37);
+}
+.MenuBars{
+    position: absolute;
+    width:35px;
+    height:5px;
+    margin: 7px 0;
+    left: 5px;
+}
+#MenuPage{
+    position:fixed;
+    width:300px;
+    height:300px;
+    background-color: maroon;
+    opacity: 0.8;
+    z-index:1;
+    left:140px;
+    top:50px;
+    display: none;
+    color:white;
+}
+.MenuItems{
+    position: absolute;
+    color:rgb(195, 254, 255)
+
+}
+
+/*MENU*/
+/*SIGN IN*/
+.signInBar{
+    position: relative;
+    background-color: black;
+    width:700px;
+    height:400px;
+    left:300px;
+    border-bottom: 2px red solid;
+    border-left: 2px red solid;
+    border-right: 2px red solid;
+    top:50px;
+}
+.UsernameSec{
+    position: absolute;
+    width:430px;
+    height:200px;
+}
+.PasswordSec{
+    position: absolute;
+    width:430px;
+    height:200px;
+    bottom: 0;
+}
+.RegisterSec{
+    position: absolute;
+    width:240px;
+    height:400px;
+   
+    right:0;
+    text-align: center;
+}
+.line{
+    position: absolute;
+    width: 2px;
+    height:350px;
+    background-color: maroon;
+    top:20px;
+    right:250px;
+}
+#SignInButton, #Register {
+    position: absolute;
+    width:350px;
+    height:40px;
+    bottom:40px;
+    left:50px;
+    border: maroon solid;
+    color:red;
+    background-color: black;
+    cursor: pointer;
+    
+   
+}
+#Username{
+    position: absolute;
+    width:300px;
+    height:30px;
+    top:130px;
+    left:70px;
+
+
+}
+#Password, #pwd{
+    position: absolute;
+    width:300px;
+    height:30px;
+    top:40px;
+    left:70px;
+}
+#RegisterButton{
+    position: absolute;
+    width:200px;
+    height:30px;
+    left:20px;
+    top:260px;
+    background-color: black;
+    border: 2px maroon solid;
+    color: red;
+    cursor: pointer;
+}

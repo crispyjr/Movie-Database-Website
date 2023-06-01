@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMDb: Register </title>
+        <link rel="stylesheet" href="CSS/signIn.css">
+        
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body onload="init()">
+    <div class="HeaderBar">
+        <div class="AboveHeaderBar"></div>
+        <a href="http://localhost:3000"><img class="MMDBimage" src="html/Images/MMDB1.png"></a>
+        <div class="search">
+            <input class="searchBar" type="text" id="search">
+            <img class="searchButton"src="html/Images/search.png">
+        </div>
+        
+        <div class="HeaderBarLine"></div>
+        <div class="Menu" onclick="MenuOn()">
+            <p style="color:cyan; font-size: 41px; position: absolute; top:-44px; left:45px;"> MENU</p>
+            <p style="color:red; font-size: 41px; position: absolute; top:-44px; left:46px;"> MENU</p>
+            <p style="color:black; font-size: 40px; position: absolute; top:-44px; left:47px"> MENU</p>
+            <span class="MenuBars" style="background-color: cyan;"></span>
+            <span class="MenuBars" style="background-color:red; top:12px;"></span>
+            <span class="MenuBars" style="background-color: cyan; top: 23px;"></span>
+       </div>
+       <div class="signIn" onclick="parent.location='MMDB_logIn.html'">
+            <p class="signInText" style="color: white; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: red; position: absolute; left:13px">SIGN IN</p>
+            <p class="signInText" style="color: black; position: absolute; left:13px">SIGN IN</p>
+
+        </div>
+        <div class="myAccount" onclick="AccountOn()">
+            <p class="myAccountText" style="color: cyan; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: red; position: absolute; left:8px">MY ACCOUNT</p>
+            <p class="myAccountText" style="color: black; position: absolute; left:6px">MY ACCOUNT</p>
+            <div class="AccountArrow"></div>
+            <div class="AccountBar" onmouseleave="AccountOff(this)">
+                <div class="AccountProfileButton" onclick="GoToProfile()"><p style="position: absolute; top: 10px; left: 45px; margin:0">Profile</p></div>
+                <div class="AccountSettingsButton" onclick="parent.location='http://localhost:3000/AccountSettings'"><p style="position: absolute; top:10px; left:8px;margin:0">Account Settings</p></div>
+                <div class="SignOutButton" onclick="SignOut()"><p style="position: absolute; top:10px; left:40px; margin:0">Sign Out</p></div>            
+            </div>
+        </div>
+       
+        <div class="BelowHeaderBar"></div>
+
+    </div>
+    <div id="MenuPage" onmouseleave="MenuOff(this)">
+        <ul>
+            <h2>Movies</h2>
+            <li>Trending Movies</li>
+            <li>Browse Movies by Genre</li>
+            <li>Top Rated Movies</li>
+            <li>Most Popular</li>
+        </ul>
+
+        <ul>
+            <h2>Celebs</h2>
+            <li>Most Popular Celebs</li>
+            <li>A-Z List</li>
+
+
+        </ul>
+    </div>
+    <div class="signInBar">
+        <div class="UsernameSec">
+            <h1 style="position: absolute; left:105px; font-family:'Times New Roman'; top:50px;color:red"> U S E R N A M E</h1>
+           <h1 style="position: absolute; left:100px; font-family:'Times New Roman'; top:50px; color:cyan"> U S E R N A M E</h1>
+
+            <input type="text" id="Username" placeholder="Enter Username" >
+
+        </div>
+        <div class="PasswordSec">
+            <h1 style="position: absolute; left:105px; font-family: 'Times New Roman', Times, serif; margin: 0; top:-10px; color:red">P A S S W O R D</h1>
+            <h1 style="position: absolute; left:100px; font-family: 'Times New Roman', Times, serif; margin: 0; top:-10px; color:cyan">P A S S W O R D</h1>
+            <input type="text" id="Password" placeholder="Enter Password" maxlength="25" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+            <input id="Register" type="button" value="R  E  G  I  S  T  E  R" onclick="addUser()">
+
+        </div>
+        <div class="line"></div>
+        <div class="RegisterSec">
+            <h1 style="position: absolute; top:100px; color: maroon"></h1>
+            <ul style="position: absolute; color: maroon; font-size:20px; top:100px; left:-20px">
+                <li id="passCheck">Password at least 8 characters</li>
+                <li id="upperCheck">At least 1 uppercase</li>
+                <li id="lowerCheck">At least 1 lowercase letter</li>
+                <li id="numCheck">At least 1 number</li>
+                
+            </ul>
+            
+        </div>
+
+    </div>
+
+    
+    
+    <script src="html/JAVASCRIPT/Client.js"></script>
+    <script src="html/JAVASCRIPT/signInUp.js"></script>
+</body>
+</html>

@@ -1,0 +1,846 @@
+body {
+    background-color: black;
+    padding:0px;
+    margin:0px;
+}
+a {
+    color: black;
+}
+/*SEARCH BAR*/
+.HeaderBar{
+    background-color: black;
+    position: fixed;
+    z-index: 2;
+    width:100%;
+    height:50px;
+}
+.AboveHeaderBar{
+    background-color: cyan;
+    position: absolute;
+    width: 100%;
+    height:2px;
+}
+.BelowHeaderBar{
+    background-color: red;
+    position: absolute;
+    width:100%;
+    height:2px;
+    top:48px;
+}
+.MMDBimage{
+    position: absolute;
+    top:5px;
+    left:5px;
+    width:100px;
+    height:40px;
+}
+.search{
+    width:530px;
+    height:40px;
+    left:420px;
+    position: absolute;
+    
+}
+.searchBar{
+    position: absolute;
+    width: 500px;
+    height:25px;
+    margin: 9px;
+    border-color: red;
+}
+.searchButton{
+    position: absolute;
+    width:30px;
+    height:30px;
+    right:6px;
+    cursor: pointer;
+    margin:9px;
+}
+.searchButton:hover{
+    background-color: rgba(61, 61, 61, 0.102);
+}
+
+
+.signIn {
+    position: absolute;
+    background-color: black;
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    border-top-color: cyan;
+    border-bottom-color: red;
+    border-right-color: black;
+    border-left-color: black;
+    width:90px;
+    height:25px;
+    right:10px;
+    margin: 10px;
+    transition: 0.6s;
+    cursor: pointer;
+    
+    
+}
+.signInText, .myAccountText{
+    position: absolute;
+    font-weight: bold;
+    font-size: medium;
+    text-align: justify;
+    top:-12px;
+}
+.myAccount{
+    position: absolute;
+    background-color: black;
+    cursor: pointer;
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    border-top-color: red;
+    border-bottom-color: red;
+    border-right-color: black;
+    border-left-color: black;
+    width:140px;
+    height:25px;
+    right:10px;
+    margin: 10px;
+    display: none;
+}
+.AccountArrow{
+    position: absolute;
+    width:0;
+    height: 0;
+    border-top:5px solid cyan;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom:8px;
+    right:10px;
+
+}
+.signIn:hover, .myAccount:hover{
+    background-color: rgb(69, 69, 69);
+}
+.AccountBar{
+    position: absolute;
+    width:150px;
+    height:105px;
+    background-color: rgb(23, 22, 22) ;
+    display: none;
+    z-index: 2;
+    top:30px;
+    right:-3px;
+    border-radius: 10%;
+}
+.AccountProfileButton{
+    position: relative;
+    width:150px;
+    height:35px;
+    transition: 0.2s;
+    text-align: center;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+.AccountSettingsButton{
+    position: relative;
+    width:150px;
+    height:35px;
+    transition: 0.2s;
+
+}
+.SignOutButton{
+    position: relative;
+    width: 150px;
+    height: 35px;
+    transition: 0.2s;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+.AccountSettingsButton:hover,.SignOutButton:hover, .AccountProfileButton:hover{
+    background-color: rgba(72, 71, 71, 0.224);
+}
+.HeaderBarLine{
+    position: absolute;
+    width: 3px;
+    height:40px;
+    background-color: red;
+    opacity: 0.2;
+    margin:5px;
+    left:120px;
+}
+.MenuButton{
+    position: absolute;
+    width:150px;
+    height:40px;
+    margin:3px;
+    left:140px;
+    color: white;
+    background-color: black;
+    border:none;
+    cursor: pointer;
+    display: none;
+}
+/*SEARCH BAR*/
+
+/*MENU list will have a black bottom border to seperate*/
+.Menu{
+    position: absolute;
+    width:170px;
+    height:40px;
+    margin:5px;
+    left:140px;
+    transition: 0.7s;
+    cursor: pointer;
+}
+.Menu:hover{
+    background-color: rgb(39, 37, 37);
+}
+.MenuBars{
+    position: absolute;
+    width:35px;
+    height:5px;
+    margin: 7px 0;
+    left: 5px;
+}
+#MenuPage{
+    position:fixed;
+    width:300px;
+    height:300px;
+    background-color: maroon;
+    opacity: 0.8;
+    z-index:1;
+    left:140px;
+    top:50px;
+    display: none;
+    color:white;
+}
+.MenuItems{
+    position: absolute;
+    color:rgb(195, 254, 255)
+
+}
+
+/*MENU*/
+/*MOVIEPANEL*/
+
+.MoviePanel{
+    position: absolute;
+    width:500px;
+    height:92vh;
+    top:49px;
+    background-color: wheat;
+}
+.MovieCastReviewPanel{
+    position: absolute;
+    width:705px;
+    height:92vh;
+    top:49px;
+    right:0;
+    background-color: beige;
+}
+.CastButton{
+    position: absolute;
+    width:25px;
+    height:92vh;
+    top:49px;
+    left:500px;
+    background-color: red;
+    transition: 0.5s;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-family: monospace;
+
+}
+.ReviewButton{
+    position: absolute;
+    width:25px;
+    height:92vh;
+    top:49px;
+    left:525px;
+    background-color: cyan;
+    transition: 0.5s;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-family: monospace;
+}
+.DetailsButton{
+    position: absolute;
+    width:25px;
+    height:92vh;
+    top:49px;
+    left:550px;
+    background-color: white;
+    transition: 0.5s;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-family: monospace;
+}
+.CastButton:hover{
+    background-color: black;
+    color:red;
+}
+.ReviewButton:hover{
+    background-color: black;
+    color:cyan;
+}
+.DetailsButton:hover{
+    background-color: black;
+    color:white;
+}
+.MovieTitleBar{
+    position: absolute;
+    width:100%;
+    height:100px;
+    background-color: brown;
+    
+}
+#MovieImageOutline{
+    position: absolute;
+    width:300px;
+    height:350px;
+    border: 2px black solid;
+    left:10px;
+    top:110px;
+}
+#MovieImage{
+    width:300px;
+    height:350px;
+}
+#MovieContentRating{
+    position: absolute;
+    padding: 5px;
+    font-size: larger;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+#MovieHeartButton{
+    position: absolute;
+    right:0;
+    bottom:0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: larger;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+#MovieLine{
+    position: absolute;
+    width:95%;
+    height:3px;
+    bottom:30px;
+    left:10px;
+    background-color: brown;
+}
+#MovieDescription{
+    position: absolute;
+    font-size:15px;
+    top: 470px;
+    left:10px;
+}
+#MovieTitle{
+    position: absolute;
+    font-size: 25px;
+    top: 20px;
+    left:10px;
+    width: 330px;
+    color:white;
+}
+#MovieGenre{
+    position: absolute;
+    font-size: 15px;
+    bottom:10px;
+    left:10px;
+}
+#MovieRating{
+    position: absolute;
+    font-size: 30px;
+    top:20px;
+    right:10px;
+    color:white;
+}
+#RatingStar{
+    position: absolute;
+    right:20px;
+    width:50px;
+    height:50px;
+    bottom:0px;
+}
+/*MOVIEPANEL*/
+.CastAndCrewPanel, .ReviewsPanel, .DetailsPanel{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: wheat;
+}
+.CastAndCrewPanel{
+    display: block;
+}
+.ReviewsPanel{
+    display:  none;
+}
+.DetailsPanel{
+    display: none;
+}
+/*CastAndCrew*/
+.CastBar{
+    position: absolute;
+    width:100%;
+    height:100px;
+    background-color: brown;
+}
+#CastBarText{
+    position: absolute;
+    width:100%;
+    text-align: center;
+    top:-30px;
+    font-size: 50px;
+    color:white;
+}
+.Director{
+    position: absolute;
+    font-size: 30px;
+    top: 90px;
+    left:240px;
+    border-bottom: brown 2px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#Director{
+    position: absolute;
+    font-size: 20px;
+    top:140px;
+    left:225px;
+    width:250px;
+    text-align: center;
+}
+#Divider{
+    position: absolute;
+    height:300px;
+    width:2px;
+    top:230px;
+    left:350px;
+    background-color: brown;
+}
+#CastTitle{
+    position: absolute;
+    font-size: 20px;
+    top:220px;
+    left:25px;
+    padding: 0px 10px;
+    border-bottom: 2px brown solid;
+}
+#CastBlock{
+    position: absolute;
+    width:320px;
+    height:280px;
+    top:250px;
+    left:20px;
+    overflow: auto;
+}
+#CastList li{
+    border-left: 2px brown solid;
+    margin: 10px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+#CastList{
+    position: absolute;
+    left:-40px;
+    top:-20px;
+    list-style-type: none;
+}
+#WriterTitle{
+    position: absolute;
+    font-size: 20px;
+    top:220px;
+    padding: 0px 10px;
+    border-bottom: 2px brown solid;
+    right:25px;
+}
+#WriterBlock{
+    position: absolute;
+    width:320px;
+    height:280px;
+    top:250px;
+    right:20px;
+    overflow: auto;
+    direction:rtl;
+}
+#WriterBlock ul{
+    direction: ltr;
+}
+#WriterList{
+    position: absolute;
+    list-style-type: none;
+    top:-20px;
+    right:-10px;
+}
+#WriterList li{
+    border-right: 2px brown solid;
+    margin:10px;
+    text-align: right;
+    padding-right: 10px;
+}
+/*CastAndCrew*/
+
+/*Reviews*/
+.WriteReviewBlock{
+    position: absolute;
+    width:100%;
+    height:200px;
+    background-color: rgb(37, 37, 74);
+    border-bottom: 2px cyan solid;
+
+}
+#WrittenReviews{
+    position: absolute;
+    height:58.7vh;
+    width:100%;
+    top:202px;
+    background-color: beige;
+    overflow: auto;
+}
+#WriteHeadlineInput{
+    position: absolute;
+    height:30px;
+    width:500px;
+    left:10px;
+    top:50px;
+}
+#WriteParagraphInput{
+    position: absolute;
+    height:90px;
+    width:500px;
+    bottom:10px;
+    left:10px;
+}
+#ReviewTitle{
+    position: absolute;
+    top:-20px;
+    font-size: 30px;
+    left:10px;
+    color:white;
+}
+#RatingInput{
+    position: absolute;
+    top:50px;
+    right:50px;
+    width:40px;
+    height:30px;
+    font-size: 20px;
+}
+#OutofTen{
+    position: absolute;
+    top:20px;
+    right:10px;
+    font-size: 30px;
+}
+#SubmitReview{
+    position: absolute;
+    bottom: 10px;
+    width:120px;
+    height:30px;
+    right:10px;
+    font-size: 15px;
+    font-family: monospace;
+    text-align: center;
+    cursor: pointer;
+}
+#ReviewBar{
+    position: relative;
+    top:0px;
+    width:100%;
+    height:130px;
+    background-color: pink;
+    border-bottom: rgb(37, 37, 74) 20px solid;
+}
+#ReviewLine{
+    position: absolute;
+    top:35px;
+    width:95%;
+    height:2px;
+    background-color: rgb(37, 37, 74);
+    left:10px;
+}
+#ReviewRating{
+    position: absolute;
+    top:-10px;
+    right:23px;
+    font-size: 20px;
+}
+#ReviewHeadline{
+    position: absolute;
+    top:-10px;
+    left:10px;
+    font-size: 20px;
+}
+#ReviewParagraph{
+    position: absolute;
+    top:23px;
+    left:10px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+#ReviewBar p {
+    color:black;
+}
+#ReviewUser{
+    position: absolute;
+    bottom: 0px;
+    right:0px;
+    padding:5px;
+    border-left: rgb(37, 37, 74) 2px solid;
+    border-top: rgb(37, 37, 74) 2px solid;
+
+}
+textarea{
+    resize: none;
+}
+/*REVIEW*/
+
+/*DETAILS*/
+
+#DetailsBar{
+    position: absolute;
+    width:100%;
+    height:100px;
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    font-size: 60px;
+}
+#DetailsTitle{
+    margin: 0;
+    margin-top: 10px;
+}
+#YearReleaseDvDBar, #CountryLanguageBar, #RuntimeProductBoxBar{
+    position: relative;
+    top:100px;
+    width:100%;
+    height:100px;
+    
+}
+#AwardsBar{
+    position: relative;
+    top:100px;
+    width: 100%;
+    height:40px;
+    background-color: black;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+#Awards{
+    margin: 0;
+    
+}
+#RatingsFromSites{
+    position: relative;
+    top:120px;
+    width:100%;
+    height:150px;
+}
+#RatingBox{
+    float: left;
+    width:125px;
+    height:130px;
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+#Border{
+    border-bottom: red 2px solid;
+    padding: 0 10px;
+}
+#InternetRating, #RottenRating, #CriticRating{
+    position: relative;
+    font-size: 30px;
+    margin: 0;
+}
+
+#CountryLanguageBar{
+    height:70px;
+}
+#YearTitle, #ReleaseTitle, #DVDTitle{
+    position: absolute;
+    border-bottom: red 2px solid;
+    font-size: 25px;
+    left:30px;
+    top:20px;
+    padding: 0px 5px;
+    
+}
+#Year{
+    position: absolute;
+    left: 8px;
+    top:53px;
+    width:100px;
+    text-align: center;
+    
+}
+#ReleaseTitle{
+    left: 260px;
+    font-size: 30px;
+    top:15px;
+}
+#Release{
+    position: absolute;
+    left: 242px;
+    top: 53px;
+    text-align: center;
+    width: 200px;
+    font-size: 20px;
+}
+#DVDTitle{
+    left: 600px;
+}
+
+#DVD{
+    position: absolute;
+    right:20px;
+    top: 53px;
+    text-align: center;
+    width:100px;
+}
+#CountryLanguageBar{
+    position: relative;
+
+}
+#CountryTitle, #LanguageTitle{
+    position: absolute;
+    border-bottom: red 2px solid;
+    font-size: 25px;
+    left:175px;
+    top:0px;
+    padding: 0px 5px;
+
+}
+#LanguageTitle{
+    left:430px;
+}
+#Country{
+    position: absolute;
+    left:130px;
+    top:30px;
+    width:180px;
+    text-align: center;
+}
+#Language{
+    position: absolute;
+    left:410px;
+    top:30px;
+    width:150px;
+    text-align: center;
+}
+#RuntimeTitle, #BoxTitle, #ProductionTitle{
+    position: absolute;
+    border-bottom: red 2px solid;
+    font-size: 25px;
+    left:30px;
+    top:10px;
+    padding: 0px 5px;
+    
+}
+#RuntimeTitle{
+    left:280px;
+    font-size: 35px;
+    top:0;
+}
+#BoxTitle{
+    left:560px;
+    
+}
+#Runtime{
+    position: absolute;
+    left:270px;
+    top:45px;
+    width:150px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#Boxoffice{
+    position: absolute;
+    left:545px;
+    top:45px;
+    width:150px;
+    text-align: center;
+    
+}
+#Production{
+    position: absolute;
+    left:15px;
+    top:45px;
+    width:150px;
+    text-align: center;
+}
+
+/*DETAILS*/
+/*SCROLL*/
+/*REVIEWS*/
+#WrittenReviews::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+#WrittenReviews::-webkit-scrollbar-track {
+    background: white; 
+  }
+   
+  /* Handle */
+#WrittenReviews::-webkit-scrollbar-thumb {
+    background: rgb(37, 37, 74); 
+  }
+  
+  /* Handle on hover */
+#WrittenReviews::-webkit-scrollbar-thumb:hover {
+    background: rgb(22, 42, 144); 
+  }
+
+/*WRITER LIST*/
+  #WriterBlock::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+#WriterBlock::-webkit-scrollbar-track {
+    background: white; 
+  }
+   
+  /* Handle */
+#WriterBlock::-webkit-scrollbar-thumb {
+    background: brown; 
+  }
+  
+  /* Handle on hover */
+#WriterBlock::-webkit-scrollbar-thumb:hover {
+    background: rgb(186, 52, 52); 
+  }
+/*CAST*/
+  #CastBlock::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+#CastBlock::-webkit-scrollbar-track {
+    background: white; 
+  }
+   
+  /* Handle */
+#CastBlock::-webkit-scrollbar-thumb {
+    background: brown; 
+  }
+  
+  /* Handle on hover */
+#CastBlock::-webkit-scrollbar-thumb:hover {
+    background:rgb(186, 52, 52); 
+  }
+  
